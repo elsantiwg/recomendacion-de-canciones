@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Recomendación Musical</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 Recomendador Musical</h1>
+            <p>Califica canciones y descubre nuevas música</p>
+        </header>
+
+        <div class="status" id="status">Conectando al servidor...</div>
+
+        <div class="section">
+            <h2>🎧 Califica Canciones</h2>
+            <div id="songs-container" class="songs-grid">
+                <!-- Las canciones se cargan aquí -->
+            </div>
+            <button onclick="classifyGenre()" class="btn btn-primary">🎭 Clasificar Mi Género</button>
+            <button onclick="getRecommendations()" class="btn btn-secondary">💡 Obtener Recomendaciones</button>
+        </div>
+
+        <div class="section">
+            <h2>📊 Resultados</h2>
+            <div id="results" class="results">
+                <!-- Los resultados aparecen aquí -->
+            </div>
+        </div>
+
+        <div class="config-section">
+            <h3>⚙️ Configuración</h3>
+            <label>Vecinos (K): 
+                <input type="number" id="kValue" value="5" min="1" max="20">
+            </label>
+            <label>Recomendaciones: 
+                <input type="number" id="nRecs" value="5" min="1" max="10">
+            </label>
+            <button onclick="clearRatings()" class="btn btn-clear">🧹 Limpiar Ratings</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

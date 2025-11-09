@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  music-app:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./backend/full_music_dataset.csv:/app/data/full_music_dataset.csv
+      - ./frontend:/app/../frontend
+    environment:
+      - FLASK_ENV=production
