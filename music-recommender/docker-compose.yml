@@ -1,0 +1,23 @@
+version: '3.9'
+services:
+  backend:
+    build: ./backend
+    container_name: music_backend
+    ports:
+      - "8000:8000"
+    networks:
+      - music_net
+
+  frontend:
+    build: ./frontend
+    container_name: music_frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - music_net
+
+networks:
+  music_net:
+    driver: bridge

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title> Musica</title>
+
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fuente -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-700 min-h-screen text-white font-[Poppins]">
+  <div class="container mx-auto p-6">
+    <header class="text-center mb-10">
+      <h1 class="text-4xl font-bold mb-2">Musica</h1>
+      <p class="text-gray-200 text-lg">Califica tus canciones favoritas y descubre nuevas recomendaciones</p>
+    </header>
+
+    <div class="flex justify-center mb-6">
+      <button id="loadBtn" onclick="loadSongs()" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition-all">Buscar Canciones</button>
+    </div>
+
+    <div id="songs" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"></div>
+
+    <div class="flex justify-center mt-8">
+      <button id="recommendBtn" onclick="getRecommendations()" disabled class="bg-green-500 hover:bg-green-600 disabled:opacity-50 text-white px-6 py-3 rounded-lg font-semibold shadow-md transition-all">
+         Sugerencias
+      </button>
+    </div>
+
+    <section id="resultSection" class="mt-10 hidden">
+      <h2 class="text-3xl font-bold text-center mb-6"> Tus Recomendaciones</h2>
+      <div id="result" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
