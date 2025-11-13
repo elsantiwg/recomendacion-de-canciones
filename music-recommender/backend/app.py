@@ -8,7 +8,7 @@ model = KNNRecommender("colombia_music_dataset.csv")
 
 @app.route('/')
 def index():
-    return "🎵 API del Recomendador Musical activa"
+    return " API del Recomendador Musical activa"
 
 @app.route('/songs', methods=['GET'])
 def get_songs():
@@ -27,4 +27,4 @@ def recommend():
     return jsonify(recs)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8000)
+    app.run(host="0.0.0.0", port=8000, debug=False)

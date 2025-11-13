@@ -23,6 +23,7 @@
 }
 .star.active {
   color: gold;
+  transform: scale(1.2);
 }
 .recommend-card {
   background: rgba(255, 255, 255, 0.15);
